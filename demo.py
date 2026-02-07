@@ -13,7 +13,7 @@ def main():
     p.add_argument("--merge-layer", type=int, default=3)
     p.add_argument("--merge-ratio", type=float, default=0.8)
     p.add_argument("--merge-adaptive", type=int, default=1)
-    p.add_argument("--merge-window", type=float, default=0.2)
+
     a = p.parse_args()
 
     os.environ["LLADA_MERGE_LAYER"] = str(a.merge_layer)
@@ -25,14 +25,14 @@ def main():
 
     from src import lavida
 
-    ans, elapsed = lavida.run(
+    answer, elapsed = lavida.run(
         image_path=a.image,
         prompt=a.prompt,
         temperature=a.temperature,
         pretrained=a.pretrained,
     )
 
-    print(ans)
+    print(answer)
     print(f"Time: {elapsed:.4f}s")
 
 
