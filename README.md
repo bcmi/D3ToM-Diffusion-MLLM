@@ -1,4 +1,7 @@
-# D3ToM-Diffusion-MLLM
+conda create -n d3tom python=3.13 -y
+conda activate d3tom
+pip install -e .[train]
 
-**Paper**: [http://arxiv.org/abs/2511.12280](http://arxiv.org/abs/2511.12280)
+huggingface下载: jacklishufan/lavida-llada-v1.0-instruct
 
+--local-dir: ./lavida-ckpts
